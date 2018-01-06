@@ -1,0 +1,63 @@
+<app-starter-header></app-starter-header>
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Main content -->
+        <section class="content">
+            <div class="login-box">
+                <div class="login-logo">
+                    <a href="#"><b>Login</b></a>
+                </div>
+                <!-- /.login-logo -->
+                <div class="login-box-body">
+                    <p class="login-box-msg">Sign in to start your session</p>
+                    <div class="alert alert-danger" *ngIf="(email.errors && (email.dirty || email.touched))||(password.errors && (password.dirty || password.touched))">
+                        <strong> Wrong credentils please enter Email and pasword(min 8 characters).</strong>
+                    </div>
+                    <form [formGroup]="myform" novalidate>
+                        <div class="form-group has-feedback">
+                            <input type="email" formControlName="email" required class="form-control" placeholder="Email">
+                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="password" formControlName="password" required class="form-control" placeholder="Password">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="checkbox icheck">
+                                    <label>
+              <input type="checkbox"> Remember Me
+            </label>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-xs-4">
+                                <button (click)="onSignin()" [disabled]="!myform.valid" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+
+                    <div class="social-auth-links text-center">
+                        <p>- OR -</p>
+                        <a (click)="signinWithFacebook()" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
+        Facebook</a>
+                        <a (click)="signinWithGoogle()" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
+        Google+</a>
+                    </div>
+                    <!-- /.social-auth-links -->
+
+                    <a href="#">I forgot my password</a><br>
+                    <a [routerLink]="['/signup']" class="text-center">Register a new membership</a>
+                    <button class="btn btn-danger pull-right" [routerLink]="['/']"> cancel </button>
+                </div>
+                <!-- /.login-box-body -->
+            </div>
+
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.container -->
+</div>
+
+<app-starter-footer></app-starter-footer>

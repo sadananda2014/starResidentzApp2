@@ -1,0 +1,19 @@
+.icheck {
+    margin-left: 10%;
+}
+
+.modal-body {
+    background-color: #d2d6de;
+    padding: 0px 0px 2px 0px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.register-box {
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.register-logo {
+    margin-bottom: 7px;
+}

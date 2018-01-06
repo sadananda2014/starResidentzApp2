@@ -1,0 +1,71 @@
+<app-starter-header></app-starter-header>
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Main content -->
+        <section class="content">
+            <div class="register-box">
+                <div class="register-logo">
+                    <a href="#"><b>Register</b></a>
+                </div>
+
+                <div class="register-box-body">
+                    <p class="login-box-msg">Register a new membership</p>
+
+                    <form [formGroup]="myform">
+                        <div class="form-group has-feedback" [ngClass]="{'has-error': name.invalid && name.dirty,'has-success': name.valid && name.dirty}">
+                            <input type="text" formControlName="name" required class="form-control" placeholder="Full name">
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            <span class="help-block" *ngIf="name.errors && (name.dirty || name.touched) && (name.errors.required || name.errors.minlength)">Name is required with minimum length 3 </span>
+                        </div>
+                        <div class="form-group has-feedback" [ngClass]="{'has-error': email.invalid && email.dirty,'has-success': email.valid && email.dirty}">
+                            <input type="email" formControlName="email" required class="form-control" placeholder="Email">
+                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            <span class="help-block" *ngIf="email.errors && (email.dirty || email.touched) && (email.errors.required || email.errors.minlength ||email.errors.pattern )">Email required </span>
+                        </div>
+                        <div class="form-group has-feedback" [ngClass]="{'has-error': phone.invalid && phone.dirty,'has-success': phone.valid && phone.dirty}">
+                            <input type="text" formControlName="phone" required class="form-control" placeholder="Phone Number">
+                            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                            <span class="help-block" *ngIf="phone.errors && (phone.dirty || phone.touched) && (phone.errors.required || phone.errors.minlength || phone.errors.maxlength || phone.errors.pattern)">Enter 10 digit </span>
+                        </div>
+                        <div class="form-group has-feedback" [ngClass]="{'has-error': password.invalid && password.dirty,'has-success': password.valid && password.dirty}">
+                            <input type="password" formControlName="password" required class="form-control" placeholder="Password">
+                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            <span class="help-block" *ngIf="password.errors && (password.dirty || password.touched) && (password.errors.required || password.errors.minlength)">Password is required with minimum length 8 </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="checkbox icheck">
+                                    <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-xs-4">
+                                <button class="btn btn-primary btn-block btn-flat" (click)="onSignup()" [disabled]="!myform.valid">Register</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+
+                    <div class="social-auth-links text-center">
+                        <p>- OR -</p>
+                        <a (click)="signinWithFacebook()" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using
+        Facebook</a>
+                        <a (click)="signinWithGoogle()" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
+        Google+</a>
+                    </div>
+
+                    <a [routerLink]="['/signin']" class="text-center">I already have a membership</a>
+                    <!--<button class="btn btn-danger pull-right" [routerLink]="['/']"> cancel </button>-->
+                </div>
+                <!-- /.form-box -->
+            </div>
+            <!-- /.register-box -->
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.container -->
+</div>
+
+<app-starter-footer></app-starter-footer>

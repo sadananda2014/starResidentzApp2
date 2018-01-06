@@ -1,0 +1,106 @@
+<app-starter-header></app-starter-header>
+<div class="content-wrapper">
+    <div class="container">
+        <!-- Main content -->
+        <section class="content">
+
+            <!-- Inline form -->
+            <div class="main-home text-center">
+                <div class="main-row">
+                </div>
+                <div class="main-row">
+                    <div class="main-content">
+                        <div class="search-content col-xs-12">
+                            <form class="form-inline" [formGroup]="myform">
+                                <div class="row">
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="sr-only" for="Location">Location</label>
+                                    <input type="email" class="form-control" id="Location" placeholder="Location">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="Check In">Check In</label>
+                                    <input type="email" class="form-control" id="checkin" placeholder="Check In">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="Check Out">Check Out</label>
+                                    <input type="email" class="form-control" id="checkout" placeholder="Check Out">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="inputEmail">Adults</label>
+                                    <select class="form-control">
+                                <option value="1" selected>1 Adult</option>
+                                <option value="2">2 Adults</option>
+                                <option value="3">3 Adults</option>
+                                <option value="4">4 Adults</option>
+                            </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="inputPassword">Childrens</label>
+                                    <select class="form-control">
+                                <option value="0" selected> No Children</option>
+                                <option value="1">1 child</option>
+                                <option value="2">2 Children</option>
+                                <option value="3">3 Children</option>
+                                <option value="4">4 Children</option>
+                            </select>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Inline form end -->
+
+            <div id="carousel-example-generic" class="carousel slide carousel-fullscreen" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <!--<img src="https://bootstrapious.com/tutorial/carousel/img/carousel1.jpg" alt="First slide">-->
+                        <div class="fill" style="background-image:url('https://bootstrapious.com/tutorial/carousel/img/carousel1.jpg');"></div>
+
+                        <div class="carousel-caption">
+                            First Slide
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="fill" style="background-image:url('https://bootstrapious.com/tutorial/carousel/img/carousel1.jpg');"></div>
+
+                        <div class="carousel-caption">
+                            Second Slide
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="fill" style="background-image:url('https://bootstrapious.com/tutorial/carousel/img/carousel1.jpg');"></div>
+
+                        <div class="carousel-caption">
+                            Third Slide
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="fa fa-angle-right"></span>
+                </a>-->
+            </div>
+
+            <h1 *ngIf="authService.isAuthenticated()"> Search Booking Enabled </h1>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.container -->
+</div>
+<div class='clearfix'></div>
+<app-starter-footer></app-starter-footer>
